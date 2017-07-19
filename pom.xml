@@ -85,7 +85,6 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>19.0</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -188,6 +187,10 @@
 						</goals>
 						<configuration>
 							<relocations>
+								<relocation>
+									<pattern>com.google.guava</pattern>
+									<shadedPattern>shaded.com.google.guava</shadedPattern>
+								</relocation>
 								<relocation>
 									<pattern>org.apache.http</pattern>
 									<shadedPattern>shaded.org.apache.http</shadedPattern>
