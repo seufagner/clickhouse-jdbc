@@ -105,11 +105,11 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <excludes>
-                <exclude>org.apache.http.*</exclude>
-                <exclude>org.apache.http.httpcomponents.*</exclude>
-              </excludes>
               <relocations>
+                <relocation>
+                  <pattern>com.google.guava</pattern>
+                  <shadedPattern>shaded.com.google.guava</shadedPattern>
+                </relocation>
                 <relocation>
                   <pattern>org.apache.http</pattern>
                   <shadedPattern>shaded.org.apache.http</shadedPattern>
@@ -157,12 +157,6 @@
           <groupId>com.fasterxml.jackson.core</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>19.0</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
   <distributionManagement>
